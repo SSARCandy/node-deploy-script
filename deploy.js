@@ -22,9 +22,10 @@ var job = (str, options) => {
 	return output;
 };
 
-working_path = '/Users/ssarcandy/Documents/GitHub/nccu30';
+working_path = '/home/ssarcandy/nccu30';
 
 out('[1] update code from github');
+job(`cd ${working_path}`);
 job('git pull');
 out('');
 
