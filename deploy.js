@@ -15,8 +15,9 @@ if (process.argv.length <= 2) {
 	out('please define [app] and [branch]')
 }
 
-var appDir = path.resolve(os.homedir(), `./${process.argv[2]}`);
+var appName = process.argv[2];
 var appBranch = process.argv[3];
+var appDir = path.resolve(os.homedir(), `./${appName}`);
 
 out('[1] update code from github');
 job(`cd ${appDir}`);
@@ -24,6 +25,6 @@ job('git pull');
 job(`git checkout ${appBranch}`);
 out('');
 
-out('[2] pm2 restart app');
-job('pm2 restart app.js');
-out('');
+//out('[2] pm2 restart app');
+//job(`pm2 restart ${appName}`);
+out('[2] done.');
