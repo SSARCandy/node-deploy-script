@@ -8,8 +8,8 @@
  
  
 ## Setting up
-
-start `deployBot.js` using `forever`, then done.
+1. `npm install`
+2. start `deployBot.js` using `forever`, then done.
 
 ## Trigger the deploy event
 
