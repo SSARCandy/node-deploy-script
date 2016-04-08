@@ -1,14 +1,15 @@
 # node-deploy-script
 
 ## Requires
- - pm2 
- - node v4
  - git
+ - node v4
+ - pm2 (`npm install -g pm2`)
+ - forever (`npm install -g forever`)
  
  
 ## Setting up
 
-start `deployBot.js` using `pm2` or whatever, then done.
+start `deployBot.js` using `forever`, then done.
 
 ## Trigger the deploy event
 
