@@ -24,6 +24,11 @@ job('git pull');
 job(`git checkout ${appBranch}`);
 out('');
 
-out('[2] pm2 restart app');
+out('[2] npm install & bower install');
+job('npm i');
+job('bower i');
+out('');
+
+out('[3] pm2 restart app');
 job('pm2 restart app.js');
 out('');
