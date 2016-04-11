@@ -24,6 +24,7 @@ deployBot.use(bodyParser.urlencoded({
 deployBot.post('/deploy/:app/:branch', function(req, res) {
 	if (!ready) {
 		console.log('deployBot not ready.');
+		res.status(400).json({msg: 'deploy bot not ready.'});
 		return;
 	}
 
@@ -31,13 +32,17 @@ deployBot.post('/deploy/:app/:branch', function(req, res) {
 	const appName = req.params.app;
 	const appBranch = req.params.branch;
 
+	ready = false;
 	exec(`node deploy.js ${appName} ${appBranch}`, function(err, stdout, stderr) {
+		ready = true;
+		
 		if (err) {
 			console.log(err);
 			return;
 		}
 
 		console.log(stdout);
+		res.status(200).send('success');
 	});
 
 });
