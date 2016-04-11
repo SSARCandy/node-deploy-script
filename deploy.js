@@ -1,3 +1,6 @@
+//add timestamps in front of log messages
+require('console-stamp')(console);
+
 var cp = require('child_process');
 var path = require('path');
 var os = require('os');
@@ -30,6 +33,6 @@ job('npm i');
 job('bower i');
 
 out('[3] pm2 restart app');
-job('pm2 restart app.js');
+job(`pm2 restart ${appName}`);
 
 out('[3] done.');

@@ -43,7 +43,7 @@ deployBot.post('/deploy/:app/:branch', function(req, res) {
 });
 
 deployBot.listen(3000);
-console.log('haha');
+console.log('deploy bot listen on posr 3000');
 
 
 
